@@ -16,8 +16,7 @@ try {
             . "clientes"
             . "(apellido,nombre,fecha_nacimiento,activo,nacionalidad_id) "
             . "VALUES"
-            . "(<?php echo $valores['apellido'];?>,<?php echo $valores['nombre'];?>,<?php echo $valores['fecha_nacimiento'];?>,"
-            . "<?php echo $valores['activo'];?>);";
+            . "(:apellido,:nombre,:fecha,:activo,:nacionalidad);";
     
     $stmt = $pdo->prepare($sql);
     
@@ -25,7 +24,7 @@ try {
     $stmt->setFetchMode(PDO::FETCH_ASSOC);//podria ser PDO::FETCH_OBJ
     
     //sustituir los parametros por los valores reales
-    $stmt->bindParam(':edad', $edad_cliente);
+    $stmt->bindParam(':id', $id_cliente);
     
     //ejecutamos la consulta
     $stmt->execute();

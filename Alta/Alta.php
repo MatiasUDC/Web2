@@ -33,7 +33,11 @@ if (!empty($_POST)) {
     } else {
         $valores["nacionalidad"] = $Nacionalidad;
     }
-    
+    if ($activo == null){
+        $valores["activo"] = $activo;
+    } else {
+        $valores["activo"] = $activo;
+    }
     if (count($errores) > 0) {
         require __DIR__. '/Alta.php';
     } else {
