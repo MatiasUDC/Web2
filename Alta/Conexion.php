@@ -18,6 +18,7 @@ try {
             . "VALUES"
             ."(:apellido,:nombre,:fecha , :activo, :nacionalidad)";
     
+    
     $stmt = $pdo->prepare($sql);
     
     //especid¿ficamos la salida como un array
@@ -30,14 +31,15 @@ try {
     $stmt->bindParam(':activo', $valores["activo"]);
     $stmt->bindParam(':nacionalidad', $valores["Nacionalidad"]);
     
+    //die(print_r($valores));
     //ejecutamos la consulta
     $stmt->execute();
     
     //recuperamos los datos de el array asoc.
-    $results = $stmt->fetchAll();
+    require __DIR__.'/Conexion_vista.php';
     
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }
-
+    
 

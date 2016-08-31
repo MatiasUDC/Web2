@@ -59,10 +59,10 @@ if (!empty($_POST)) {
     if ($Nacionalidad == null) {
         $errores["Nacionalidad"] = "Debe ingresar una nacionalidad valido";
     } else {
-        $valores["Nacionalidad"] = $Nacimiento;
+        $valores["Nacionalidad"] = $Nacionalidad;
     }
     if ($activo == null){
-        $valores["activo"] = $activo;
+        $errores["activo"] = $activo;
     } else {
         $valores["activo"] = $activo;
     }

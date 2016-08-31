@@ -1,6 +1,5 @@
 <?php
 
-$id_cliente = $_POST['id'];
 error_reporting(E_ALL);
 ini_set("display_errors", true);
 header('Content - Type: text/html; charset-UTF-8');
@@ -30,6 +29,8 @@ try {
 
     //recuperamos los datos de el array asoc.
     $results = $stmt->fetchAll();
+    require __DIR__.'/Baja_vista.php';
+
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }
