@@ -34,7 +34,7 @@
                         <?php endif; ?>
                         <td><?php echo $value['nacionalidad']; ?></td>
                         <td><a class="btn btn-primary" href="Modificacion/modificacion.php?id=<?php echo $value['id'] ?>">Modificar</a></td>
-                        <td><a class="btn btn-primary" href="Baja/baja.php?id=<?php echo $value['id'] ?>">Baja</a></td>
+                        <td><a class="btn btn-danger" href="Baja/baja.php?id=<?php echo $value['id'] ?>">Baja</a></td>
                     </tr>
                 <?php endforeach; ?> 
 

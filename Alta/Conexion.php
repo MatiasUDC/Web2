@@ -14,9 +14,9 @@ try {
     //sql
     $sql = "INSERT INTO "
             . "clientes"
-            . "(apellido,nombre,fecha_nacimiento,activo,nacionalidad_id) "
+            . "(apellido,nombre,fecha_nacimiento,activo,nacionalidad_id)"
             . "VALUES"
-            . "(:apellido,:nombre,:fecha,:activo,:nacionalidad);";
+            ."(:apellido,:nombre,:fecha , :activo, :nacionalidad)";
     
     $stmt = $pdo->prepare($sql);
     
@@ -24,7 +24,11 @@ try {
     $stmt->setFetchMode(PDO::FETCH_ASSOC);//podria ser PDO::FETCH_OBJ
     
     //sustituir los parametros por los valores reales
-    $stmt->bindParam(':id', $id_cliente);
+    $stmt->bindParam(':apellido', $valores["apellido"]);
+    $stmt->bindParam(':nombre', $valores["nombre"]);
+    $stmt->bindParam(':fecha', $valores["Nacimiento"]);
+    $stmt->bindParam(':activo', $valores["activo"]);
+    $stmt->bindParam(':nacionalidad', $valores["Nacionalidad"]);
     
     //ejecutamos la consulta
     $stmt->execute();
