@@ -1,5 +1,6 @@
 <?php
 
+$id_cliente = $_GET["id"];
 error_reporting(E_ALL);
 ini_set("display_errors", true);
 header('Content - Type: text/html; charset-UTF-8');
@@ -22,15 +23,15 @@ try {
     //especid¿ficamos la salida como un array
     $stmt->setFetchMode(PDO::FETCH_ASSOC); //podria ser PDO::FETCH_OBJ
     //sustituir los parametros por los valores reales
-    $stmt->bindParam(':id', $id_cliente_cliente);
+    $stmt->bindParam(':id', $id_cliente);
 
     //ejecutamos la consulta
     $stmt->execute();
 
     //recuperamos los datos de el array asoc.
-    $results = $stmt->fetchAll();
-    require __DIR__.'/Baja_vista.php';
+    
 
+    require __DIR__ . '/Baja_vista.php';
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }
