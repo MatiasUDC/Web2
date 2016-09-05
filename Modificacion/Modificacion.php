@@ -1,5 +1,8 @@
 <?php
+
 if (empty($_POST)) {
+    $errores = [];
+
     $id_cliente = $_GET['id'];
     error_reporting(E_ALL);
     ini_set("display_errors", true);
@@ -57,10 +60,11 @@ if (empty($_POST)) {
     } catch (PDOException $ex) {
         echo "Error de conexion de la DB: " . $ex->getMessage();
     }
-}
-$errores = [];
-if (!empty($_POST)) {
 
+    require __DIR__ . '/Modificacion_Vista.php';
+}
+if (!empty($_POST)) {
+    $errores = [];
     $valores = [];
     $id = $_POST["id"];
     $apellido = $_POST["apellido"];
@@ -108,5 +112,6 @@ if (!empty($_POST)) {
 
         require __DIR__ . '/Conexion.php';
     }
+
+    require __DIR__ . '/Modificacion_Vista.php';
 }
-require __DIR__ . '/Modificacion_Vista.php';
