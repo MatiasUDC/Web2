@@ -1,9 +1,5 @@
 <?php
 require __DIR__.'/../bibliotecas/db_connect.php';
-error_reporting(E_ALL);
-ini_set("display_errors", true);
-header('Content - Type: text/html; charset-UTF-8');
-
 try {
     $pdo = getConnection();
     $sql = "INSERT INTO "
