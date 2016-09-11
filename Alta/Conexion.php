@@ -1,17 +1,11 @@
 <?php
-
+require __DIR__.'/../bibliotecas/db_connect.php';
 error_reporting(E_ALL);
 ini_set("display_errors", true);
 header('Content - Type: text/html; charset-UTF-8');
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=clientes_db', 'root','');
-    
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->exec("SET NAMES UTF8");
-    
-    //sql
+    $pdo = getConnection();
     $sql = "INSERT INTO "
             . "clientes"
             . "(apellido,nombre,fecha_nacimiento,activo,nacionalidad_id)"

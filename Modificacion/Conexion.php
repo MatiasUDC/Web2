@@ -1,15 +1,12 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", true);
-    header('Content - Type: text/html; charset-UTF-8');
-
+    require __DIR__.'/../bibliotecas/db_connect.php';
+    require __DIR__ . '/../login/control_session.php';
+    if($_SESSION['UPDATE'] != true ) {
+        header('Location: ../denegado.php');
+        die();
+    }
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=clientes_db', 'root', '');
-
-        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->exec("SET NAMES UTF8");
-
+        $pdo = getConnection();
         //sql
         $sql = "UPDATE clientes SET apellido=:apellido,"
                 . " nombre=:nombre, fecha_nacimiento=:fecha,"

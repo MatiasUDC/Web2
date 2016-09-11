@@ -4,7 +4,7 @@ require __DIR__ . "/BaseVista.php";
 <html lang="es">
 
     <head>
-        <title>Ejemplo</title>
+        <title>Primer Practico</title>
         <meta charset="UTF-8">
         <script type="text/javascript" src="<?php echo $bower; ?>/bootstrap/dist/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?php echo $bower; ?>/jquery/dist/jquery.min.js"></script>

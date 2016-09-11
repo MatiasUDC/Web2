@@ -1,4 +1,9 @@
-<?php require __DIR__ . '/../bibliotecas/Header.php'; ?>
+<?php require __DIR__ . '/../bibliotecas/Header.php';
+    if($_SESSION['UPDATE'] != true ) {
+         header('Location: ../login/denegado.php');
+        die();
+    }
+?>
 <div class="form-group">
     <div class="col-md-8">
         <form method="post" action="Modificacion.php" id="formulario">
@@ -39,7 +44,7 @@
             </div>
             <br>
             <div class="contact_form">
-                <input value="<?php echo $results["activo"]; ?>" type="checkbox" name="Activo" value="Activo">Activo<br/><br/>
+                <input value="<?php echo $results["activo"] ?>" type="checkbox" name="Activo" value="Activo">Activo<br/><br/>
             </div>
             <button type="submit" value="Enviar" class="btn btn-primary">Modificar</button>
             <br>
@@ -49,22 +54,3 @@
     </div>
 </div>
 <?php require __DIR__ . '/../bibliotecas/footer.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php require __DIR__ . '/../bibliotecas/Header.php'; ?>
-
