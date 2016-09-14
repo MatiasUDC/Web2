@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
-require __DIR__ . '\bibliotecas\Header.php';
-require __DIR__ . '\login\control_session.php';
+require_once __DIR__ . '\bibliotecas\Header.php';
+require_once __DIR__ . '\login\control_session.php';
 if (!array_key_exists('contador', $_SESSION)) {
     $_SESSION['contador'] = 0;
 }
@@ -25,7 +25,7 @@ $_SESSION['contador'] = $_SESSION['contador'] + 1;
                         <ul class="dropdown-menu">
                             <li><a href="#">Perfil</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="controller/cerrar_session.php">Cerrar Session</a></li>
+                            <li><a href="login/cerrar_session.php">Cerrar Session</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -72,11 +72,11 @@ $_SESSION['contador'] = $_SESSION['contador'] + 1;
         </div>
         <div class="col-md-8">
             <p>Has visitado esta pagina : <?php echo $_SESSION['contador']; ?> veces</p>
-            <a class="btn btn-primary" href="cerrar_session.php">Cerrar Sesion</a>
+            <a class="btn btn-primary" href="login/cerrar_session.php">Cerrar Sesion</a>
         </div>
     </div>
 
 </div>
 
 
-<?php require __DIR__ . '\bibliotecas\footer.php'; ?>
+<?php require_once __DIR__ . '\bibliotecas\footer.php'; ?>

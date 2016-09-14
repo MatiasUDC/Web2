@@ -1,6 +1,6 @@
 <?php
-require __DIR__.'/../bibliotecas/db_connect.php';
-require __DIR__ . '/../login/control_session.php';
+require_once __DIR__.'/../bibliotecas/db_connect.php';
+require_once __DIR__ . '/../login/control_session.php';
     if($_SESSION['UPDATE'] != true ) {
         header('Location: ../login/denegado.php');
         die();
@@ -52,7 +52,7 @@ if (empty($_POST)) {
         echo "Error de conexion de la DB: " . $ex->getMessage();
     }
 
-    require __DIR__ . '/Modificacion_Vista.php';
+    require_once __DIR__ . '/Modificacion_Vista.php';
 }
 if (!empty($_POST)) {
     $errores = [];
@@ -98,11 +98,11 @@ if (!empty($_POST)) {
         }
     }
     if (count($errores) > 0) {
-        require __DIR__ . '/Modificacion.php';
+        require_once __DIR__ . '/Modificacion.php';
     } else {
 
-        require __DIR__ . '/Conexion.php';
+        require_once __DIR__ . '/ConexionModificacion.php';
     }
 
-    require __DIR__ . '/Modificacion_Vista.php';
+    require_once __DIR__ . '/Modificacion_Vista.php';
 }

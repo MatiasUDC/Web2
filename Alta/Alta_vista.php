@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../bibliotecas/Header.php'; ?>
+<?php require_once __DIR__ . '/../bibliotecas/Header.php'; ?>
 <div class="form-group">
     <div class="col-md-8">
         <form method="post" action="Alta.php" id="formulario">
@@ -44,4 +44,4 @@
         </form>
     </div>
 </div>
-<?php require __DIR__ . '/../bibliotecas/footer.php'; ?>
+<?php require_once __DIR__ . '/../bibliotecas/footer.php'; ?>

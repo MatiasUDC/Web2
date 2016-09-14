@@ -1,6 +1,6 @@
 <?php
-require __DIR__.'/../bibliotecas/db_connect.php';
-require __DIR__ . '/../login/control_session.php';
+require_once __DIR__.'/../bibliotecas/db_connect.php';
+require_once __DIR__ . '/../login/control_session.php';
     if($_SESSION['DELETE'] != true ) {
         header('Location: ../login/denegado.php');
         die();
@@ -23,10 +23,9 @@ try {
     //ejecutamos la consulta
     $stmt->execute();
 
-    //recuperamos los datos de el array asoc.
-    
+    //redirigimos al index.
+    header('Location: ../index.php');
 
-    require __DIR__ . '/Baja_vista.php';
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }

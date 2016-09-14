@@ -1,5 +1,4 @@
-<?php require __DIR__ . '/../bibliotecas/header.php';    
-?>
+<?php require_once __DIR__ . '/../bibliotecas/header.php';?>
 
 <form class="form-horizontal" method="POST" action="login.php" id="formulario_index">
     <div class="container">
@@ -8,7 +7,7 @@
             <div class="col-md-10">
                 <div class="panel panel-success">
 
-                    <div class="panel-body">Inicio de Session</div>
+                    <div class="panel-body">Inicio de Sesion</div>
 
                     <div class="panel-footer">
                         <ul class="list-group">
@@ -29,11 +28,11 @@
                             </div>                           
                             <div class="form-group">
                                 <?php if (isset($errores)): ?>
-                                    <p>Error al prosesar</p>
+                                    <p>Error al procesar</p>
                                     <ul>
                                         <?php foreach ($errores as $valor): ?>
                                             <li style="color: red;"><?php echo $valor; ?></li>
-                                        <?php endforeach; ?>
+                                            <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
                             </div>
@@ -45,4 +44,4 @@
     </div>
 </form>
 <?php
-require __DIR__ . '/../bibliotecas/footer.php'; 
+require_once __DIR__ . '/../bibliotecas/footer.php';

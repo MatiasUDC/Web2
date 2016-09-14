@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/../bibliotecas/db_connect.php';
-require __DIR__ . '/../login/control_session.php';
+require_once __DIR__ . '/../bibliotecas/db_connect.php';
+require_once __DIR__ . '/../login/control_session.php';
 if ($_SESSION['INSERT'] != true) {
     header('Location: ../login/denegado.php');
     die();
@@ -68,7 +68,7 @@ if (!empty($_POST)) {
         require __DIR__ . '/Alta.php';
     } else {
 
-        require __DIR__ . '/Conexion.php';
+        require __DIR__ . '/ConexionAlta.php';
     }
 }
-require __DIR__ . '/Alta_vista.php';
+require_once __DIR__ . '/Alta_vista.php';

@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/bibliotecas/db_connect.php';
+require_once __DIR__.'/bibliotecas/db_connect.php';
 try {
     $pdo = getConnection();
     //sql
@@ -26,4 +26,4 @@ try {
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }
-require __DIR__ . '/Index_Vista.php';
+require_once __DIR__ . '/Index_Vista.php';

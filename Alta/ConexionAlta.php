@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/../bibliotecas/db_connect.php';
+require_once __DIR__.'/../bibliotecas/db_connect.php';
 try {
     $pdo = getConnection();
     $sql = "INSERT INTO "
@@ -26,8 +26,7 @@ try {
     $stmt->execute();
     
     //recuperamos los datos de el array asoc.
-    require __DIR__.'/Conexion_vista.php';
-    
+    header('Location: ../index.php');
 } catch (PDOException $ex) {
     echo "Error de conexion de la DB: " . $ex->getMessage();
 }

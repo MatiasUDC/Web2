@@ -1,5 +1,5 @@
 <?php
-    require __DIR__ . '../bibliotecas/header.php';
+    require_once __DIR__ . '../bibliotecas/header.php';
 ?>
 
 <div class="container">
@@ -9,5 +9,5 @@
 	</div>
 </div>
 <?php
-    require __DIR__.'../bibliotecas/footer.php';
+    require_once __DIR__.'../bibliotecas/footer.php';
     ?>

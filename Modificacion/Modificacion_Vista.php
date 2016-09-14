@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../bibliotecas/Header.php';
+<?php require_once __DIR__ . '/../bibliotecas/Header.php';
     if($_SESSION['UPDATE'] != true ) {
          header('Location: ../login/denegado.php');
         die();
