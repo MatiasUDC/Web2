@@ -20,31 +20,38 @@
 
             <div class="contact_form">
                 <label for="Modificacion">Apellido</label>
-                <input value="<?php echo $results["apellido"]; ?>" name="apellido" type="Text" class="form-control" id="Apellido" aria-describedby="AyudaApellido" placeholder="Ingrese un Apellido">
-                <small id="Apellido" class="form-text text-muted"></small>
+                <input id="apeliido" value="<?php echo $results["apellido"]; ?>" name="apellido" type="Text" class="form-control" id="Apellido" aria-describedby="AyudaApellido" placeholder="Ingrese un Apellido">
+                <small id="apellido" class="form-text text-muted"></small>
             </div>
             <br>
             <div class="contact_form">
                 <label for="Modificacion">Nombre</label>
-                <input value="<?php echo $results["nombre"]; ?>" name="nombre" type="Text" class="form-control" id="Nombre" aria-describedby="AyudaNombre" placeholder="Ingrese un Nombre">
-                <small id="Nombre" class="form-text text-muted"></small>
+                <input id="nombre" value="<?php echo $results["nombre"]; ?>" name="nombre" type="Text" class="form-control" id="Nombre" aria-describedby="AyudaNombre" placeholder="Ingrese un Nombre">
+                <small id="nombre" class="form-text text-muted"></small>
             </div>
             <br>
             <div class="contact_form">
                 <label for="Modificacion">Fecha Nacimiento</label><br/>
-                <input value="<?php echo $results["fecha_nacimiento"]; ?>" placeholder="Ingrese Fecha de Nacimiento" type="text" name="Nacimiento" id="Nacimiento">
+                <input value="<?php echo $results["fecha_nacimiento"]; ?>" placeholder="Ingrese Fecha de Nacimiento" type="text" name="Nacimiento" id="nacimiento">
             </div>
             <br>    
             <div class="contact_form">
                 <label for="Formulario">Nacionalidad</label>
-                <select placeholder="Nacionalidad" name="Nacionalidad" class="contact_form" id="Nacionalidad">
-                    <?php foreach ($resultado as $value): ?>
-                        <option value="<?php echo $value['id']; ?>"><?php echo $value['nacionalidad']; ?> </option>
-                    <?php endforeach; ?></select>
+                <select placeholder="Nacionalidad" name="Nacionalidad" class="contact_form" id="nacionalidad">
+                    <optgroup>
+                        <option value="<?php echo $results["nacionalidad_id"];?>"><?php echo $results["nacionalidad"];?></option>>
+                    </optgroup> 
+                    <optgroup label="-------------------------------------">
+                        <?php foreach ($resultado as $value): ?>
+                        <option value="<?php echo $value['id']; ?>"><?php echo $value['nacionalidad']; ?></option>
+                    <?php endforeach; ?>
+                    </optgroup>
+                </select>
+                    
             </div>
             <br>
             <div class="contact_form">
-                <input value="<?php echo $results["activo"] ?>" type="checkbox" name="Activo" value="Activo">Activo<br/><br/>
+                <input value="<?php echo $results["activo"] ?>" type="checkbox" id="activo" name="Activo">Activo<br/><br/>
             </div>
             <button type="submit" value="Enviar" class="btn btn-primary">Modificar</button>
             <br>

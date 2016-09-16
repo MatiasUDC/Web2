@@ -1,0 +1,6 @@
+{
+   "name": "Matias/PrimerPractico",
+   "require": {
+      "silex/silex": "~2.0"
+   }
+}

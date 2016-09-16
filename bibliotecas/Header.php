@@ -15,39 +15,45 @@ require __DIR__ . "/BaseVista.php";
 
         <script type="text/javascript">
             $().ready(function () {
-
-                $("#formulario").validate({
-                    rules: {
-                        Nombre: {
-                            required: true,
+            jQuery.validator.addMethod('selectcheck', function (value) {
+            return (value != '0');
+            }, "Campo obligatorio");
+                    $("#formulario").validate({
+            rules: {
+            nombre: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 20
+            },
+                    apellido: {
+                    required: true,
                             minlength: 3,
-                            maxlength: 20,
-                        },
-                        Apellido: {
-                            required: true,
-                            minlength: 3
-                        },
-                        Nacimiento: {
-                            required: true,
-                            dpDate: true
-                        }
+                            maxlength: 20
                     },
+                    fecha_nacimiento: {
+                    required: true,
+                            dpDate: true
+                    },
+                    nacionalidad: {
+                    selectcheck: true
+                    }
+            },
                     messages: {
-                        Nombre: {
-                            required: "Campo obligatorio",
+                    nombre: {
+                    required: "Campo obligatorio",
                             minlength: "Longitud minima 3 carácteres",
                             maxlength: "Longitud maxima 20 carácteres"
-                        },
-                        Apellido: {
+                    },
+                            apellido: {
                             required: "Campo obligatorio",
-                            minlength: "Longitud minima 3 carácteres"
-                        },
-                        Nacimiento: {
+                                    minlength: "Longitud minima 3 carácteres",
+                                    maxlength: "Longitud maxima 20 carácteres"
+                            },
+                            fecha_nacimiento: {
                             required: "Campo obligatorio"
-
-                        }
+                            }
                     }
-                });
+            });
             });
         </script>
 
@@ -71,9 +77,9 @@ require __DIR__ . "/BaseVista.php";
             }
         </style>
         <script>
-            $().ready(function () {
-                $("#Nacimiento").datepicker({
-                    dateFormat: 'yy-mm-dd',
+                    $().ready(function () {
+            $("#nacimiento").datepicker({
+            dateFormat: 'yy-mm-dd',
                     changeMonth: true,
                     changeYear: true});
             });

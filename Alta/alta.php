@@ -55,15 +55,13 @@ if (!empty($_POST)) {
     } else {
         $valores["Nacionalidad"] = $Nacionalidad;
     }
-    if ($activo == NULL) {
-        $errores["activo"] = $activo;
-    } else {
+ 
         if ($activo == false)
             $valores["activo"] = 0;
         else {
             $valores["activo"] = 1;
         }
-    }
+    
     if (count($errores) > 0) {
         require __DIR__ . '/Alta.php';
     } else {

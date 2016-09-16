@@ -12,7 +12,8 @@ if (empty($_POST)) {
     try {
         $pdo = getConnection();
         //sql
-        $sql = "SELECT c.id,c.apellido as apellido,c.nombre as nombre,c.fecha_nacimiento ,c.activo as activo,n.nacionalidad "
+        $sql = "SELECT c.id,c.apellido as apellido,c.nombre as nombre,c.fecha_nacimiento ,c.activo as activo,"
+                . "c.nacionalidad_id as nacionalidad_id, n.nacionalidad "
                 . "FROM clientes c JOIN nacionalidades n "
                 . "ON c.nacionalidad_id = n.id "
                 . "WHERE c.id >= :id";
@@ -88,15 +89,11 @@ if (!empty($_POST)) {
     } else {
         $valores["Nacionalidad"] = $Nacionalidad;
     }
-    if ($activo == NULL) {
-        $errores["activo"] = $activo;
-    } else {
         if ($activo == false)
             $valores["activo"] = 0;
         else {
             $valores["activo"] = 1;
         }
-    }
     if (count($errores) > 0) {
         require_once __DIR__ . '/Modificacion.php';
     } else {
