@@ -98,7 +98,7 @@ if (!empty($_POST)) {
         require_once __DIR__ . '/Modificacion.php';
     } else {
 
-        require_once __DIR__ . '/ConexionModificacion.php';
+        require_once __DIR__ . '/../controladores/ConexionModificacion.php';
     }
 
     require_once __DIR__ . '/Modificacion_Vista.php';

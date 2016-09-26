@@ -66,7 +66,7 @@ if (!empty($_POST)) {
         require __DIR__ . '/Alta.php';
     } else {
 
-        require __DIR__ . '/ConexionAlta.php';
+        require __DIR__ . '/../controladores/ConexionAlta.php';
     }
 }
 require_once __DIR__ . '/Alta_vista.php';
